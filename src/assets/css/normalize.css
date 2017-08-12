@@ -1,0 +1,34 @@
+body{ margin: 0;padding: 0;font-family: "微软雅黑";overflow: hidden;}
+body,html{-webkit-text-size-adjust: none;width: 100%;height: 100%;}
+*{text-decoration: none;list-style: none;}
+img{border: 0px;}
+ul,li,dl,dd,dt,p,ol,h1,h2,h3,h4,h5{font-size: 12px;font-weight: 100;padding: 0;margin: 0;}
+.wrap{margin: 0 auto;}
+.fl{float: left;}
+.fr{float: right;}
+.index{overflow: hidden;}
+.clr{clear:both; height:0px; width:100%; font-size:1px; line-height:0px; visibility:hidden; overflow:hidden;}
+.pointer{cursor:pointer;}
+a,input,button{ outline:none; }
+::-moz-focus-inner{border:0px;}
+/*a:link {color:#0f0;text-decoration:none;} 
+a:visited {color: #FFFF00; text-decoration:none;} 
+a:hover {color: #00FF00; text-decoration:underline;} 
+a:active {color: #0000FF; text-decoration:underline;}*/
+a{color: #000;}
+.wrapper{clear: both;width: 100%;}
+word-break:break-all /*文字换行*/
+/*white-space:nowrap 文字不换行*/
+
+/*默认滚动条样式修改ie9 google Firefox 等高版本浏览器有效*/
+/*::selection {background: #D03333;color: white;text-shadow: none;}
+::-webkit-scrollbar-track-piece{width:10px;background-color:#f2f2f2}
+::-webkit-scrollbar{width:10px;height:6px}
+::-webkit-scrollbar-thumb{height:50px;background-color:rgba(0,0,0,.3);}
+::-webkit-scrollbar-thumb:hover{background:#cc0000}*/
+
+
+/*渐变*/
+/*background-image: -moz-linear-gradient(top, #8fa1ff, #3757fa);
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ff4f02), color-stop(1, #8f2c00)); Saf4+, Chrome 
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c6ff00', endColorstr='#538300', GradientType='0'); IE*/
