@@ -2,25 +2,32 @@
   <div id="app">
    
     <top></top>
-    <section class="main">
+    <div class="main">
         <keep-alive>
            <router-view></router-view>
-        </keep-alive>  
-    </section>
-   
+        </keep-alive>
+    </div>
     <bottom></bottom>
+    <loading></loading>
   </div>
 </template>
 
 <script>
-import top from "view/common/top";
+import top from "view/common/top"
 import bottom from "view/common/bottom"
+import loading from "components/loading"
 
 export default {
   name: 'app',
   components:{
     top,
-    bottom
+    bottom,
+    loading
+  },
+  data(){
+    return {
+      loading:true
+    }
   }
 }
 </script>
@@ -45,10 +52,7 @@ export default {
 }
 html,body,#app{
   height: 100%;
-  display: flex;
-  flex-direction: column;
 }
-
 body{
   	box-sizing: border-box;
 }
@@ -57,7 +61,9 @@ a{
   text-decoration: none;
 }
 .main{
-  flex-grow:1;
+  height:calc(100% - 2rem - 2.5rem);
   overflow-y: auto;
+  width:100%;
+  position: relative;
 }
 </style>

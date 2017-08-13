@@ -40,15 +40,17 @@ export default {
 
 @top-height:2rem;
 .header{
+    padding-top: 0.2rem;
     background:#5e61f8;
     height:@top-height;
-    line-height: @top-height;
     .logo{
+        padding-top: 0.3rem;
         font-size: 0.8rem;
         margin: 0;
         color: #fff;
     }
     .login{
+        padding-top: 0.5rem;
         font-size: 0.5rem;
         color: #fff;
         a{

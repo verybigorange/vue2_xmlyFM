@@ -29,10 +29,13 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@foot-height:50px;
+@foot-height:2.5rem;
 footer{
+	box-sizing: border-box;
 	border-top:1px solid #cbcbcb;
-
+	position: fixed;
+	bottom:0;
+	left: 0;
 	width: 100%;
 	height: @foot-height;
 	display: flex;
