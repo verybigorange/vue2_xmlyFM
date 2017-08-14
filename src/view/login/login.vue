@@ -1,6 +1,5 @@
 <template>
-  <div class="login">
-     
+  <div class="login" @keypress.enter="handleLogin">
       <div class="row" >
         <span>用户名</span>:<el-input v-model="username"  placeholder="请输入用户名"></el-input>
       </div>
@@ -10,7 +9,7 @@
       <div class="row" style="text-align:right">
           <router-link :to="{name:'register'}" style="margin-right:2rem;color:#999">没有账号，我要注册</router-link>
       </div>
-       <el-button type="primary" style="width:12.5rem">登录</el-button>
+       <el-button type="primary" style="width:12.5rem" @click="handleLogin">登录</el-button>
   </div>
 </template>
 
@@ -18,6 +17,7 @@
 
 import Vue from "vue";
 import md5 from "md5";
+import loginhttp from "api/loginhttp.js"
 
 export default {
 
@@ -31,7 +31,9 @@ export default {
    
   },
   methods:{
-    
+    handleLogin(){
+        loginhttp({"username":this.username,"password":this.password})
+    }
   }
 }
 </script>

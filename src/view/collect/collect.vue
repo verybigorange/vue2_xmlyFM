@@ -5,7 +5,7 @@
 </template>
 
 <script>
-console.log(utils)
+
 export default {
   
 }
