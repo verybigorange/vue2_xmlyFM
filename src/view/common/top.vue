@@ -11,7 +11,7 @@
                style="width:6rem">
                </el-input>
         </el-col>
-        <el-col :span="5" offset="2">
+        <el-col :span="5" :offset="2">
             <div class="login">
                 <router-link :to="{name:'login'}">登录</router-link>
                 &nbsp;|&nbsp;

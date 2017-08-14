@@ -4,18 +4,18 @@
 			<span class="iconfont">&#xe828;</span>
 			<p>首页</p>
 		</router-link>
-		<router-link to="" tag="div">
+		<router-link :to="{name:'collect'}" tag="div" active-class="active">
 			<span class="iconfont">&#xe6a0;</span>
 			<p>收藏</p>
 		</router-link>
 		<div class="iconfont play">
 			&#xe65a;
 		</div>
-		<router-link to="" tag="div">
+		<router-link :to="{name:'community'}" tag="div" active-class="active">
 			<span class="iconfont">&#xe7ce;</span>
 			<p>社区</p>
 		</router-link>
-		<router-link to="" tag="div">
+		<router-link :to="{name:'person'}" tag="div" active-class="active">
 			<span class="iconfont">&#xe6b8;</span>
 			<p>我的</p>
 		</router-link>

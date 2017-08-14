@@ -5,7 +5,6 @@ import App from './App'
 import router from './router'
 import store from "src/vuex/store"
 
-
 // 引入饿了么UI组件库
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
