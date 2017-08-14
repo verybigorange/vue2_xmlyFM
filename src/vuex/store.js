@@ -1,9 +1,24 @@
 import Vuex from "vuex"
 import Vue from "vue"
-
-import index from "src/vuex/index.js";
+import mutations from "./mutations.js"
 
 Vue.use(Vuex);
+
+export default new Vuex.Store({
+    state:{
+        loading:true
+    },
+    getters:{
+
+    },
+    mutations,
+    actions:{
+
+    }
+
+})
+
+
 
 
 

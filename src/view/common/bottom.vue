@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-		<router-link to="" tag="div" active-class="active">
+		<router-link :to="{name:'index'}" tag="div" active-class="active">
 			<span class="iconfont">&#xe828;</span>
 			<p>首页</p>
 		</router-link>

@@ -1,14 +1,19 @@
 <template>
   <div id="app">
-   
+  
     <top></top>
     <div class="main">
-        <keep-alive>
-           <router-view></router-view>
+      <transition name="router-fade" mode="out-in">
+        <keep-alive v-if="$route.meta.keepAlive">
+          <router-view></router-view>
         </keep-alive>
+      </transition>
+      <transition name="router-fade" mode="out-in">
+        <router-view v-if="!$route.meta.keepAlive"></router-view>
+      </transition>
     </div>
     <bottom></bottom>
-    <loading></loading>
+    <loading v-if="$store.state.loading"></loading>
   </div>
 </template>
 
@@ -19,14 +24,14 @@ import loading from "components/loading"
 
 export default {
   name: 'app',
-  components:{
+  components: {
     top,
     bottom,
     loading
   },
-  data(){
+  data() {
     return {
-      loading:true
+      loading: true
     }
   }
 }
@@ -34,8 +39,10 @@ export default {
 
 <style >
 /* 引入字体iconfoot  */
+
 @font-face {
-  font-family: 'iconfont';  /* project id 383213 */
+  font-family: 'iconfont';
+  /* project id 383213 */
   src: url('//at.alicdn.com/t/font_383213_9i0dqic2a173z0k9.eot');
   src: url('//at.alicdn.com/t/font_383213_9i0dqic2a173z0k9.eot?#iefix') format('embedded-opentype'),
   url('//at.alicdn.com/t/font_383213_9i0dqic2a173z0k9.woff') format('woff'),
@@ -43,27 +50,42 @@ export default {
   url('//at.alicdn.com/t/font_383213_9i0dqic2a173z0k9.svg#iconfont') format('svg');
 }
 
-.iconfont{
-	font-family:"iconfont";
-	font-style:normal;
-	-webkit-font-smoothing: antialiased;
+.iconfont {
+  font-family: "iconfont";
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;
-  -moz-osx-font-smoothing: grayscale; 
-}
-html,body,#app{
-  height: 100%;
-}
-body{
-  	box-sizing: border-box;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-a{
+.router-fade-enter-active,
+.router-fade-leave-active {
+  transition: opacity .3s;
+}
+
+.router-fade-enter,
+.router-fade-leave-active {
+  opacity: 0;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+a {
   text-decoration: none;
 }
-.main{
-  height:calc(100% - 2rem - 2.5rem);
+
+.main {
+  height: calc(100% - 2rem - 2.5rem);
   overflow-y: auto;
-  width:100%;
+  width: 100%;
   position: relative;
 }
 </style>

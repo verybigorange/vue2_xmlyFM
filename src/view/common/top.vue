@@ -1,20 +1,21 @@
 <template>
     <el-row class="el-row header">
-        <el-col :offset="1" :span="4">
+        <el-col :offset="1" :span="6">
               <p class="logo">HelloFM</p>
         </el-col>
-         <el-col :span="10"  :offset="2">
+         <el-col :span="9" >
               <el-input 
                placeholder="请搜索音频" icon="search"
                v-model="searchData" 
-               :on-icon-click="handleIconClick">
+               :on-icon-click="handleIconClick"
+               style="width:6rem">
                </el-input>
         </el-col>
-        <el-col :span="5" :offset="2">
+        <el-col :span="5" offset="2">
             <div class="login">
-                <router-link to="">登录</router-link>
+                <router-link :to="{name:'login'}">登录</router-link>
                 &nbsp;|&nbsp;
-                <router-link to="">注册</router-link>
+                <router-link :to="{name:'register'}">注册</router-link>
             </div>
         </el-col>
     </el-row>

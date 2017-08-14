@@ -7,10 +7,13 @@
       <div class="row">
         <span>密&emsp;码:</span><el-input v-model="password" type="password"  placeholder="请输入密码" ></el-input>
       </div>
-      <div class="row" style="text-align:right">
-          <router-link :to="{name:'register'}" style="margin-right:2rem;color:#999">没有账号，我要注册</router-link>
+      <div class="row">
+        <span>密&emsp;码:</span><el-input v-model="comfirmPassword" type="password"  placeholder="请再次输入密码" ></el-input>
       </div>
-       <el-button type="primary" style="width:12.5rem">登录</el-button>
+      <div class="row" style="text-align:right">
+          <router-link :to="{name:'login'}" style="margin-right:2rem;color:#999">已有账号，我要登陆</router-link>
+      </div>
+       <el-button type="primary" style="width:12.5rem">注册</el-button>
   </div>
 </template>
 
@@ -25,6 +28,7 @@ export default {
       return{
         username:"",
         password:"",
+        comfirmPassword:"",
       }
   },
   computed:{
