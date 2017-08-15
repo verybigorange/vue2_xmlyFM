@@ -41,13 +41,12 @@ export default {
 /* 引入字体iconfoot  */
 
 @font-face {
-  font-family: 'iconfont';
-  /* project id 383213 */
-  src: url('//at.alicdn.com/t/font_383213_9i0dqic2a173z0k9.eot');
-  src: url('//at.alicdn.com/t/font_383213_9i0dqic2a173z0k9.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_383213_9i0dqic2a173z0k9.woff') format('woff'),
-  url('//at.alicdn.com/t/font_383213_9i0dqic2a173z0k9.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_383213_9i0dqic2a173z0k9.svg#iconfont') format('svg');
+  font-family: 'iconfont';  /* project id 383213 */
+  src: url('//at.alicdn.com/t/font_383213_3qv24ylf5o0tfbt9.eot');
+  src: url('//at.alicdn.com/t/font_383213_3qv24ylf5o0tfbt9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_383213_3qv24ylf5o0tfbt9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_383213_3qv24ylf5o0tfbt9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_383213_3qv24ylf5o0tfbt9.svg#iconfont') format('svg');
 }
 
 .iconfont {

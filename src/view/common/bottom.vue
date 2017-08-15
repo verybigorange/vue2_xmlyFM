@@ -8,8 +8,11 @@
 			<span class="iconfont">&#xe6a0;</span>
 			<p>收藏</p>
 		</router-link>
-		<div class="iconfont play">
+		<div class="iconfont play" v-if="play" @click="play = !play">
 			&#xe65a;
+		</div>
+		<div class="iconfont play pause" v-if="!play"  @click="play = !play" >
+			&#xe694;
 		</div>
 		<router-link :to="{name:'community'}" tag="div" active-class="active">
 			<span class="iconfont">&#xe7ce;</span>
@@ -24,7 +27,11 @@
 
 <script>
 export default {
-  
+	data(){
+		return{
+			play:true,
+		}
+	}
 }
 </script>
 
@@ -55,6 +62,22 @@ footer{
 	div.play{
 		font-size: 1.5rem;
 		color: #f2ca27;
+		width: 2rem;
+		height: 2rem;
+		line-height: 2rem;
+	}
+}
+.pause{
+	animation: rotation 3s linear infinite;
+}
+@keyframes rotation{
+	from{
+		transform-origin:center center;
+		transform:rotateZ(0deg);
+	}
+	to{
+		transform-origin:center center;
+		transform:rotateZ(360deg);
 	}
 }
 </style>
