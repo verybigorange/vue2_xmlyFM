@@ -7,14 +7,15 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state:{
         loading:true,
-        token:""
+        token:"",
+        user:{}
     },
     getters:{
 
     },
     mutations,
     actions:{
-
+        
     }
 
 })

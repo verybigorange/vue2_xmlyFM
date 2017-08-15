@@ -25,6 +25,11 @@ if ('addEventListener' in document) {
     }, false);
 }
 
+// 检查token和用户信息,并且放入store中
+import { getCookie } from "api/utils.js"
+if(getCookie("token")) store.commit("SETTOKEN", getCookie("token"));
+if(getCookie("user")) store.commit("SETUSER",JSON.parse(getCookie("user")));
+
 Vue.config.productionTip = false
 
 Vue.use(ElementUI);

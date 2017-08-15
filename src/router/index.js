@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import store from 'src/vuex/store.js'
+import { Message } from 'element-ui'
 
 //引入工具方法
-import {getCookie} from "api/utils"
+import { getCookie } from "api/utils"
 
 //引入白名单
 import whitelist from "src/router/whitelist.js"
@@ -63,19 +64,25 @@ const router =  new Router({
 
 
 router.beforeEach((to,from,next)=>{
-
     //loading
     store.commit("SHOWLODING");
 
     //登录拦截，判断token和白名单
     if(whitelist.indexOf(to.fullPath)!== -1 || store.state.token){
-       next()
-    }else{
+      next()
+    }else if(to.path!=="/login"){
+      Message({
+        message:"请登录",
+        type:"warning"
+      });
       next({
           path: '/login',
-          query: {redirect: to.fullPath}
+          query: {redirect: to.fullPath}  //登录成功后进入上次点击的页面
       })
+    }else{
+      next()
     }
+   
 })
 router.afterEach(()=>{
     store.commit("HIDELODING");
