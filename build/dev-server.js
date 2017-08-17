@@ -59,6 +59,10 @@ app.use(devMiddleware)
 // compilation error display
 app.use(hotMiddleware)
 
+var bodyParser = require("body-parser");
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 // serve pure static assets
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
@@ -79,6 +83,9 @@ devMiddleware.waitUntilValid(() => {
   }
   _resolve()
 })
+
+var api = require("./router/api");
+app.use("/api",api);
 
 var server = app.listen(port)
 
