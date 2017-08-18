@@ -14,6 +14,7 @@
     </div>
     <bottom></bottom>
     <loading v-if="$store.state.loading"></loading>
+    <hide-audio :src="$store.state.audiosrc"></hide-audio>
   </div>
 </template>
 
@@ -21,13 +22,15 @@
 import top from "view/common/top"
 import bottom from "view/common/bottom"
 import loading from "components/loading"
+import HideAudio from "components/hideAudio";
 
 export default {
   name: 'app',
   components: {
     top,
     bottom,
-    loading
+    loading,
+    HideAudio
   },
   data() {
     return {

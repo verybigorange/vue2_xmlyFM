@@ -8,10 +8,10 @@
 			<span class="iconfont">&#xe6a0;</span>
 			<p>收藏</p>
 		</router-link>
-		<div class="iconfont play" v-if="play" @click="play = !play">
+		<div class="iconfont play" v-if="$store.state.play" @click="handlePlay">
 			&#xe65a;
 		</div>
-		<div class="iconfont play pause" v-if="!play"  @click="play = !play" >
+		<div class="iconfont play pause" v-if="!$store.state.play"  @click="handlePlay" >
 			&#xe694;
 		</div>
 		<router-link :to="{name:'community'}" tag="div" active-class="active">
@@ -29,7 +29,24 @@
 export default {
 	data(){
 		return{
-			play:true,
+			
+		}
+	},
+	getters:{
+		audioDOM(){
+			return this.$store.state.audioDOM
+		}
+	},
+	methods:{
+		handlePlay(){
+			
+			//根据状态来看是否播放和暂停
+			if($store.state.play){
+				audioDOM.play();
+			}else{
+				audioDOM.pause();
+			}
+			this.$store.commit('CHANGEPLAY');
 		}
 	}
 }
@@ -65,6 +82,7 @@ footer{
 		width: 2rem;
 		height: 2rem;
 		line-height: 2rem;
+		cursor: pointer;
 	}
 }
 .pause{

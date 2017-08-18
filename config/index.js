@@ -28,13 +28,18 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      // '/api': {                         
-      //     target: 'http://192.168.1.116:8085/',
+      //  '/api': {
+      //     target: 'http://www.ximalaya.com/',
       //     changeOrigin: true,
       //     pathRewrite: {
-      //     '^/api': ''      //将/api替换成空。
+      //          '^/api': ''
+      //     },
+      //     headers: {
+      //          Referer: 'http://www.ximalaya.com/explore/',
+      //          Host:"www.ximalaya.com"
       //     }
-      // }
+     }
+
 
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"

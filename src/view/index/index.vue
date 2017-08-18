@@ -1,14 +1,22 @@
 <template>
   <div class="main" >
-    
+      <button @click="handleclick">11</button>
   </div>
 </template>
 
 <script>
 import audiohttp from "api/audiohttp";
-audiohttp(46466413).then(res=>{
-  console.log(res.data)
-})
+
+export default{
+    methods:{
+      handleclick(){
+          audiohttp(47618778).then(res=>{
+            console.log(res)
+            //  store.state.audiosrc = res.data.play_path
+          })
+      }
+    }
+}
 
 </script>
 

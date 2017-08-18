@@ -8,7 +8,10 @@ export default new Vuex.Store({
     state:{
         loading:true,
         token:"",
-        user:{}
+        user:{},
+        audiosrc : "",
+        play:true,
+        audioDOM:"",
     },
     getters:{
 

@@ -19,6 +19,14 @@ export default {
     },
     //设置token值
     SETTOKEN(state,tokenval){
-        state.token = tokenval
+        state.token = tokenval;
+    },
+    //改变音频的播放链接地址
+    CHANGEAUDIOSRC(state,newsrc){
+        state.audiosrc = newsrc;
+    },
+    //改变音频的播放与暂停状态
+    CHANGEPLAY(state){
+        state.play =  !state.play;
     }
 }
