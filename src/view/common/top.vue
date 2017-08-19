@@ -39,9 +39,9 @@ export default {
 
 <style lang="less" scoped>
 
-@top-height:2rem;
+@top-height:2.5rem;
 .header{
-    padding-top: 0.2rem;
+    padding-top: 0.4rem;
     background:#5e61f8;
     height:@top-height;
     .logo{

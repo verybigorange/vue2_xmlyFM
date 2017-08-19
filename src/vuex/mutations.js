@@ -21,9 +21,9 @@ export default {
     SETTOKEN(state,tokenval){
         state.token = tokenval;
     },
-    //改变音频的播放链接地址
-    CHANGEAUDIOSRC(state,newsrc){
-        state.audiosrc = newsrc;
+    //改变正在播放的音频的数据
+    CHANGEAUDIODATA(state,newsrc){
+        state.audiodata = newsrc;
     },
     //改变音频的播放与暂停状态
     CHANGEPLAY(state){

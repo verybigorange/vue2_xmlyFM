@@ -13,6 +13,7 @@
     "axios": "^0.16.2",
     "babel-plugin-transform-es2015-unicode-regex": "^6.24.1",
     "body-parser": "^1.17.2",
+    "cheerio": "^1.0.0-rc.2",
     "element-ui": "^1.4.1",
     "fastclick": "^1.0.6",
     "md5": "^2.2.1",

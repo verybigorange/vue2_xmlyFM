@@ -8,11 +8,11 @@
 			<span class="iconfont">&#xe6a0;</span>
 			<p>收藏</p>
 		</router-link>
-		<div class="iconfont play" v-if="$store.state.play" @click="handlePlay">
-			&#xe65a;
+		<div class="iconfont play" v-if="$store.state.play" @click="handlePlay" ref="playicon">
+			&#xe609;
 		</div>
-		<div class="iconfont play pause" v-if="!$store.state.play"  @click="handlePlay" >
-			&#xe694;
+		<div class="iconfont play pause" v-if="!$store.state.play"  @click="handlePlay" ref="playicon">
+			&#xe647;
 		</div>
 		<router-link :to="{name:'community'}" tag="div" active-class="active">
 			<span class="iconfont">&#xe7ce;</span>
@@ -27,26 +27,26 @@
 
 <script>
 export default {
+	// 如果当前有数据，把播放图片换了
+	mounted(){
+		if(this.$store.state.audiodata && this.$store.state.audiodata.cover_url_142){
+			this.$refs.playicon.style.background = "url(" +this.$store.state.audiodata.cover_url_142 + ")";
+		}
+		//将dom元素挂store上
+		this.$store.state.playiconDOM = this.$refs.playicon;
+	},
 	data(){
 		return{
 			
 		}
 	},
 	getters:{
-		audioDOM(){
-			return this.$store.state.audioDOM
-		}
+		
 	},
 	methods:{
 		handlePlay(){
 			
-			//根据状态来看是否播放和暂停
-			if($store.state.play){
-				audioDOM.play();
-			}else{
-				audioDOM.pause();
-			}
-			this.$store.commit('CHANGEPLAY');
+			this.$store.dispatch("controlAudio")
 		}
 	}
 }
@@ -54,7 +54,10 @@ export default {
 
 <style lang="less" scoped>
 @foot-height:2.5rem;
+@size:1.6rem;
 footer{
+	color:#000;
+	background: #e1e1df;
 	box-sizing: border-box;
 	border-top:1px solid #cbcbcb;
 	position: fixed;
@@ -77,12 +80,17 @@ footer{
 		color:#5e61f8;
 	}
 	div.play{
-		font-size: 1.5rem;
-		color: #f2ca27;
-		width: 2rem;
-		height: 2rem;
-		line-height: 2rem;
+		font-size: 1.2rem;
+		color: #fff;
+		width: @size;
+		height: @size;
+		line-height: @size;
 		cursor: pointer;
+		border-radius: 50%;
+		background-repeat: no-repeat;
+		border: 1px solid #fff;
+		text-align: center;
+		background-size: contain;
 	}
 }
 .pause{
