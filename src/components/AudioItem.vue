@@ -1,11 +1,11 @@
 <template>
     <div class="audio-item" @click="handleclick">
         <div class="imgbox">
-             <img :src="audioData.cover_url_142" alt="" class="img">
-             <p class="album-title">{{audioData.album_title}}</p>
+             <img :src="itemData.cover_url_142" alt="" class="img">
+             <p class="album-title">{{itemData.album_title}}</p>
         </div>
-        <p class="title" :title="audioData.title">{{audioData.title}}</p>
-        <p class="author" :title="audioData.nickname">{{audioData.nickname}}</p>
+        <p class="title" :title="itemData.title">{{itemData.title}}</p>
+        <p class="author" :title="itemData.nickname">{{itemData.nickname}}</p>
     </div>
 </template>
 
@@ -14,7 +14,7 @@ import audiohttp from "api/audiohttp"
 
 export default {
     props:{
-        audioData:{
+        itemData:{
             default:function(){
                 return {};
             }
@@ -22,8 +22,12 @@ export default {
     },
     methods:{
         async handleclick(){
-            let msg = await audiohttp(this.audioData.id);
-            this.$store.dispatch("controlAudio",msg.data);
+            //当点击的不同的类型才请求数据
+            if(this.itemData.id != this.$store.state.audiodata.id){
+                let msg = await audiohttp(this.itemData.id);
+                this.$store.dispatch("controlAudio",msg.data);
+            }
+           
         }
     }
 }
@@ -38,6 +42,9 @@ export default {
     width:4.5rem;
     box-shadow: 2px 2px 2px #cbcbcc;
     box-sizing: border-box;
+    &:hover{
+        opacity: 0.7;
+    }
     .imgbox{
         position: relative;
         .img{

@@ -28,5 +28,9 @@ export default {
     //改变音频的播放与暂停状态
     CHANGEPLAY(state){
         state.play =  !state.play;
+    },
+    //设置音频的播放的状态
+    SETPLAY(state,data){
+        state.play = data;
     }
 }
