@@ -13,7 +13,7 @@
     </div>
     <bottom></bottom>
     <loading v-if="$store.state.loading"></loading>
-    <audio src=""  ref="audioDOM">您的浏览器不支持 audio 标签。</audio>
+    <audio src="" ref="audioDOM">您的浏览器不支持 audio 标签。</audio>
   </div>
 </template>
 
@@ -24,8 +24,8 @@ import loading from "components/loading"
 
 
 export default {
-  mounted(){
-      this.$store.state.audioDOM = this.$refs.audioDOM
+  mounted() {
+    this.$store.state.audioDOM = this.$refs.audioDOM
   },
   name: 'app',
   components: {
@@ -42,10 +42,43 @@ export default {
 </script>
 
 <style >
+/*滚动条 start*/
+
+ ::-webkit-scrollbar {
+  width: 8px;
+  height: 4px;
+  background-color: #F5F5F5;
+}
+
+
+/*定义滚动条轨道 内阴影+圆角*/
+
+ ::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background: #fff;
+}
+
+
+/*定义滑块 内阴影+圆角*/
+
+ ::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color:#e1e1df;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: #e1e1df;
+}
+
+
 /* 引入字体iconfoot  */
 
 @font-face {
-  font-family: 'iconfont';  /* project id 383213 */
+  font-family: 'iconfont';
+  /* project id 383213 */
   src: url('//at.alicdn.com/t/font_383213_8znehvqdgn20ggb9.eot');
   src: url('//at.alicdn.com/t/font_383213_8znehvqdgn20ggb9.eot?#iefix') format('embedded-opentype'),
   url('//at.alicdn.com/t/font_383213_8znehvqdgn20ggb9.woff') format('woff'),

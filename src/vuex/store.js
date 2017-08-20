@@ -29,7 +29,9 @@ export default new Vuex.Store({
 
             // 根据状态和存在播放数据是否播放和暂停
 			if(state.play && state.audiodata.play_path){
-                state.audioDOM.src = state.audiodata.play_path;
+                if(state.audioDOM.src != state.audiodata.play_path ){
+                    state.audioDOM.src = state.audiodata.play_path;
+                }
                 state.audioDOM.play();
                 state.playiconDOM.style.background = "url(" +state.audiodata.cover_url_142 + ")";
                 state.playiconDOM.style.backgroundSize = "contain";
