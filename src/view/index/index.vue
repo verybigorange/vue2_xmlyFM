@@ -73,8 +73,8 @@ export default{
 
     //获取首页数据 
     async beforeMount(){
-      let pagedata = await indexpagehttp();
-      this.pagedata = pagedata.data;
+      let {data} = await indexpagehttp();
+      this.pagedata = data;
     },
     components:{
       AudioItem,
@@ -82,7 +82,7 @@ export default{
     },
     data(){
       return {
-        pagedata:[]
+        pagedata:[],
       }
     },
     methods:{
