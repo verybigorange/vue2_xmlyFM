@@ -43,6 +43,39 @@ router.get("/indexpage", function (req, res, next) {
 			res.send(dataArr)
 		});
 	})
-})
+});
+
+
+
+router.post("/selectsuggest", function (req, res, next) {
+	// 请求的页面
+	var url = "http://m.ximalaya.com/search/"+ encodeURIComponent(req.body.selected) +"/voice"
+	var dataArr = [];
+	http.get(url, function (response) {
+		var html = '';        //用来存储请求网页的整个html内容
+		response.setEncoding('utf-8'); //防止中文乱码
+		response.on('data', function (chunk) {
+			html += chunk;
+		});
+		response.on('end', function () {
+			var $ = cheerio.load(html); //采用cheerio模块解析html
+			console.log(html)
+			$("ul.list li.item").each(function (index, item) {
+				var sound_id = $(item).find("div.pic").attr("sound_id");
+				if (sound_id != undefined) {
+					var obj = {};
+					obj.id =  sound_id;
+					obj.imgsrc = $(item).find("div.pic img").attr("src");
+					obj.title = $(item).find("div.info .tit").text().trim();
+					obj.date =$(item).find("div.info .time-cont").text().trim();
+					dataArr.push(obj)
+				}
+			})
+			res.send(dataArr)
+		});
+	})
+});
+
+
 
 module.exports = router;

@@ -16,6 +16,7 @@ const register = resolve => require(['view/login/register.vue'], resolve)
 const collect = resolve => require(['view/collect/collect.vue'], resolve)
 const community = resolve => require(['view/community/community.vue'], resolve)
 const person = resolve => require(['view/person/person.vue'], resolve)
+const suggest = resolve => require(['view/common/suggest.vue'], resolve)
 
 Vue.use(Router)
 
@@ -56,6 +57,11 @@ const router =  new Router({
       name: 'person',
       component: person
     },
+    {
+      path:'/suggest',
+      name:'suggest',
+      component: suggest
+    }
     
 
     

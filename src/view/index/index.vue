@@ -1,5 +1,5 @@
 <template>
-  <div class="main" >
+  <div class="main">
       <div class="block">
          <title-line><span class="iconfont">&#xe603;</span>推荐</title-line>
          <div class="content">

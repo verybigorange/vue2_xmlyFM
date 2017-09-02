@@ -15,7 +15,8 @@ export default new Vuex.Store({
         audiodata :{id:0},
         play:true,
         audioDOM:"",
-        playiconDOM:""
+        playiconDOM:"",
+        searchResult:[]
 
     },
     getters,

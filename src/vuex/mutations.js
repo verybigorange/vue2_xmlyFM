@@ -32,5 +32,9 @@ export default {
     //设置音频的播放的状态
     SETPLAY(state,data){
         state.play = data;
+    },
+    //设置搜索后的结果
+    SETSEARCHRESULT(state,data){
+        state.searchResult = data;
     }
 }
