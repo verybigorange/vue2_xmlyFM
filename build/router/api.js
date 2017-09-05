@@ -59,7 +59,6 @@ router.post("/selectsuggest", function (req, res, next) {
 		});
 		response.on('end', function () {
 			var $ = cheerio.load(html); //采用cheerio模块解析html
-			console.log(html)
 			$("ul.list li.item").each(function (index, item) {
 				var sound_id = $(item).find("div.pic").attr("sound_id");
 				if (sound_id != undefined) {
